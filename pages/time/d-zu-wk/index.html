@@ -1,0 +1,133 @@
+﻿<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Umrechner - Tag in Woche</title>
+  <link rel="stylesheet" href="/css/styles.css?v=5">
+</head>
+<body data-mode="time" data-from="d" data-to="wk">
+<header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Umrechner</div>
+      <nav class="topnav">
+        <a href="/index.html" class="nav-link">Startseite</a>
+        <details class="nav-dropdown">
+          <summary>Einheiten</summary>
+          <div class="dropdown">
+            <a href="/pages/length/">L&auml;nge</a>
+            <a href="/pages/area/">Fl&auml;che</a>
+            <a href="/pages/weight/">Gewicht</a>
+            <a href="/pages/time/">Zeit</a>
+            <a href="/pages/speed/">Geschwindigkeit</a>
+            <a href="/pages/temperature/">Temperatur</a>
+            <a href="/pages/volume/">Volumen</a>
+            <a href="/pages/energy/">Energie</a>
+            <a href="/pages/pressure/">Druck</a>
+            <a href="/pages/power/">Leistung</a>
+            <a href="/pages/currency/">W&auml;hrung</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <main>
+<section class="card selector-card">
+        <h2>Alle Kategorien</h2>
+        <div class="category-buttons">
+          <a class="cat-btn" href="/pages/length/">L&auml;nge</a>
+          <a class="cat-btn" href="/pages/area/">Fl&auml;che</a>
+          <a class="cat-btn" href="/pages/weight/">Gewicht</a>
+          <a class="cat-btn" href="/pages/time/">Zeit</a>
+          <a class="cat-btn" href="/pages/speed/">Geschwindigkeit</a>
+          <a class="cat-btn" href="/pages/temperature/">Temperatur</a>
+          <a class="cat-btn" href="/pages/volume/">Volumen</a>
+          <a class="cat-btn" href="/pages/energy/">Energie</a>
+          <a class="cat-btn" href="/pages/pressure/">Druck</a>
+          <a class="cat-btn" href="/pages/power/">Leistung</a>
+          <a class="cat-btn" href="/pages/currency/">W&auml;hrung</a>
+        </div>
+      </section>
+
+<section class="card" id="card-time">
+        <h2 id="time-title">Tag in Woche</h2>
+        <div class="row">
+          <label for="time-input" id="time-label">Wert</label>
+          <input id="time-input" type="number" inputmode="decimal" step="any" value="1">
+        </div>
+        <div class="row">
+          <label for="time-from" id="label-from-time">von</label>
+          <select id="time-from"></select>
+        </div>
+        <div class="row swap-row">
+          <button type="button" class="swap-btn" data-mode="time" aria-label="Einheiten tauschen">&#8644;</button>
+        </div>
+        <div class="row">
+          <label for="time-to" id="label-to-time">nach</label>
+          <select id="time-to"></select>
+        </div>
+        <div class="row">
+          <button id="time-convert">Umrechnen</button>
+          <div id="time-result" class="result">&mdash;</div>
+        </div>
+        <div id="time-calc" class="calc"></div>
+        <div class="info-body area-note">
+          <h3>Zeit</h3>
+          <p>Zeit beschreibt die Abfolge von Ereignissen und erm&ouml;glicht es, Dauer, Reihenfolge und Ver&auml;nderung zu erfassen. Sie ist eine der abstraktesten physikalischen Gr&ouml;&szlig;en und gleichzeitig eine der grundlegendsten Voraussetzungen f&uuml;r menschliche Wahrnehmung, Planung und Wissenschaft.</p>
+          <p>Die Basiseinheit der Zeit ist die Sekunde (s). W&auml;hrend sich fr&uuml;he Zeitmessungen an astronomischen Ph&auml;nomenen orientierten &ndash; etwa dem Lauf der Sonne oder den Mondphasen &ndash;, basiert die moderne Definition der Sekunde auf atomaren Prozessen. Konkret wird sie durch eine bestimmte Schwingung des C&auml;sium-133-Atoms festgelegt, was eine extrem pr&auml;zise Zeitmessung erm&ouml;glicht.</p>
+          <p>Historisch war die Messung der Zeit eng mit dem Bed&uuml;rfnis nach Ordnung verbunden: Landwirtschaft, Religion, Navigation und sp&auml;ter Industrie erforderten immer genauere Zeitangaben. Mechanische Uhren, Pendeluhren und schlie&szlig;lich Atomuhren markieren wichtige Entwicklungsschritte.</p>
+          <p>In der modernen Physik ist Zeit kein absolutes Konzept mehr. Die Relativit&auml;tstheorie zeigt, dass Zeit vom Beobachter, seiner Geschwindigkeit und dem Gravitationsfeld abh&auml;ngt. Damit wird Zeit nicht nur als Messgr&ouml;&szlig;e, sondern als dynamischer Bestandteil des Universums verstanden.</p>
+        </div>
+        <div class="info">
+          <h3 id="time-info-title">Info</h3>
+          <div id="time-info-body" class="info-body"></div>
+        </div>
+      </section>
+</main>
+  </div>
+
+<footer class="site-footer">
+    <a href="/pages/impressum/">Impressum</a>
+    <span class="sep">|</span>
+    <a href="/pages/datenschutz/">Datenschutz</a>
+  </footer>
+
+  <script src="/js/script.js?v=33"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

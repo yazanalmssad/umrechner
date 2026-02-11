@@ -1,0 +1,132 @@
+﻿<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Umrechner - JPY in USD</title>
+  <link rel="stylesheet" href="/css/styles.css?v=5">
+</head>
+<body data-mode="currency" data-from="JPY" data-to="USD">
+<header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Umrechner</div>
+      <nav class="topnav">
+        <a href="/index.html" class="nav-link">Startseite</a>
+        <details class="nav-dropdown">
+          <summary>Einheiten</summary>
+          <div class="dropdown">
+            <a href="/pages/length/">L&auml;nge</a>
+            <a href="/pages/area/">Fl&auml;che</a>
+            <a href="/pages/weight/">Gewicht</a>
+            <a href="/pages/time/">Zeit</a>
+            <a href="/pages/speed/">Geschwindigkeit</a>
+            <a href="/pages/temperature/">Temperatur</a>
+            <a href="/pages/volume/">Volumen</a>
+            <a href="/pages/energy/">Energie</a>
+            <a href="/pages/pressure/">Druck</a>
+            <a href="/pages/power/">Leistung</a>
+            <a href="/pages/currency/">W&auml;hrung</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <main>
+<section class="card selector-card">
+        <h2>Alle Kategorien</h2>
+        <div class="category-buttons">
+          <a class="cat-btn" href="/pages/length/">L&auml;nge</a>
+          <a class="cat-btn" href="/pages/area/">Fl&auml;che</a>
+          <a class="cat-btn" href="/pages/weight/">Gewicht</a>
+          <a class="cat-btn" href="/pages/time/">Zeit</a>
+          <a class="cat-btn" href="/pages/speed/">Geschwindigkeit</a>
+          <a class="cat-btn" href="/pages/temperature/">Temperatur</a>
+          <a class="cat-btn" href="/pages/volume/">Volumen</a>
+          <a class="cat-btn" href="/pages/energy/">Energie</a>
+          <a class="cat-btn" href="/pages/pressure/">Druck</a>
+          <a class="cat-btn" href="/pages/power/">Leistung</a>
+          <a class="cat-btn" href="/pages/currency/">W&auml;hrung</a>
+        </div>
+      </section>
+
+<section class="card" id="card-currency">
+        <h2 id="currency-title">JPY in USD</h2>
+        <div class="row">
+          <label for="currency-input" id="currency-label">Betrag</label>
+          <input id="currency-input" type="number" inputmode="decimal" step="any" value="1">
+        </div>
+        <div class="row">
+          <label for="currency-from" id="label-from-currency">von</label>
+          <select id="currency-from"></select>
+        </div>
+        <div class="row swap-row">
+          <button type="button" class="swap-btn" data-mode="currency" aria-label="Einheiten tauschen">&#8644;</button>
+        </div>
+        <div class="row">
+          <label for="currency-to" id="label-to-currency">nach</label>
+          <select id="currency-to"></select>
+        </div>
+        <div class="row">
+          <button id="currency-convert">Umrechnen</button>
+          <div id="currency-result" class="result">&mdash;</div>
+        </div>
+        <div class="info-body area-note">
+          <h3>W&auml;hrung</h3>
+          <p>W&auml;hrung ist kein physikalisches, sondern ein gesellschaftliches Ma&szlig;system. Sie dient als allgemein akzeptiertes Tauschmittel, Recheneinheit und Wertaufbewahrungsmittel innerhalb einer Volkswirtschaft.</p>
+          <p>Historisch waren W&auml;hrungen h&auml;ufig an materielle Werte wie Gold oder Silber gebunden. Moderne W&auml;hrungen sind meist Fiatgeld, dessen Wert auf Vertrauen, staatlicher Garantie und wirtschaftlicher Stabilit&auml;t beruht.</p>
+          <p>Mit der Digitalisierung haben sich neue Formen von Geld entwickelt, darunter elektronische Zahlungsmittel und Kryptow&auml;hrungen. Diese stellen traditionelle Vorstellungen von Geld, Zentralisierung und Kontrolle grundlegend infrage.</p>
+        </div>
+        <div class="info">
+          <h3 id="currency-info-title">Info</h3>
+          <div id="currency-info-body" class="info-body"></div>
+        </div>
+      </section>
+</main>
+  </div>
+
+<footer class="site-footer">
+    <a href="/pages/impressum/">Impressum</a>
+    <span class="sep">|</span>
+    <a href="/pages/datenschutz/">Datenschutz</a>
+  </footer>
+
+  <script src="/js/script.js?v=33"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,133 @@
+﻿<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Umrechner - Knoten in Meilen pro Stunde</title>
+  <link rel="stylesheet" href="/css/styles.css?v=5">
+</head>
+<body data-mode="speed" data-from="kn" data-to="mph">
+<header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Umrechner</div>
+      <nav class="topnav">
+        <a href="/index.html" class="nav-link">Startseite</a>
+        <details class="nav-dropdown">
+          <summary>Einheiten</summary>
+          <div class="dropdown">
+            <a href="/pages/length/">L&auml;nge</a>
+            <a href="/pages/area/">Fl&auml;che</a>
+            <a href="/pages/weight/">Gewicht</a>
+            <a href="/pages/time/">Zeit</a>
+            <a href="/pages/speed/">Geschwindigkeit</a>
+            <a href="/pages/temperature/">Temperatur</a>
+            <a href="/pages/volume/">Volumen</a>
+            <a href="/pages/energy/">Energie</a>
+            <a href="/pages/pressure/">Druck</a>
+            <a href="/pages/power/">Leistung</a>
+            <a href="/pages/currency/">W&auml;hrung</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <main>
+<section class="card selector-card">
+        <h2>Alle Kategorien</h2>
+        <div class="category-buttons">
+          <a class="cat-btn" href="/pages/length/">L&auml;nge</a>
+          <a class="cat-btn" href="/pages/area/">Fl&auml;che</a>
+          <a class="cat-btn" href="/pages/weight/">Gewicht</a>
+          <a class="cat-btn" href="/pages/time/">Zeit</a>
+          <a class="cat-btn" href="/pages/speed/">Geschwindigkeit</a>
+          <a class="cat-btn" href="/pages/temperature/">Temperatur</a>
+          <a class="cat-btn" href="/pages/volume/">Volumen</a>
+          <a class="cat-btn" href="/pages/energy/">Energie</a>
+          <a class="cat-btn" href="/pages/pressure/">Druck</a>
+          <a class="cat-btn" href="/pages/power/">Leistung</a>
+          <a class="cat-btn" href="/pages/currency/">W&auml;hrung</a>
+        </div>
+      </section>
+
+<section class="card" id="card-speed">
+        <h2 id="speed-title">Knoten in Meilen pro Stunde</h2>
+        <div class="row">
+          <label for="speed-input" id="speed-label">Wert</label>
+          <input id="speed-input" type="number" inputmode="decimal" step="any" value="1">
+        </div>
+        <div class="row">
+          <label for="speed-from" id="label-from-speed">von</label>
+          <select id="speed-from"></select>
+        </div>
+        <div class="row swap-row">
+          <button type="button" class="swap-btn" data-mode="speed" aria-label="Einheiten tauschen">&#8644;</button>
+        </div>
+        <div class="row">
+          <label for="speed-to" id="label-to-speed">nach</label>
+          <select id="speed-to"></select>
+        </div>
+        <div class="row">
+          <button id="speed-convert">Umrechnen</button>
+          <div id="speed-result" class="result">&mdash;</div>
+        </div>
+        <div id="speed-calc" class="calc"></div>
+        <div class="info-body area-note">
+          <h3>Geschwindigkeit</h3>
+          <p>Die Geschwindigkeit beschreibt, wie schnell sich ein Objekt bewegt, also wie stark sich sein Ort innerhalb einer bestimmten Zeit &auml;ndert. Sie verkn&uuml;pft direkt die Gr&ouml;&szlig;en L&auml;nge und Zeit und ist eine zentrale Kenngr&ouml;&szlig;e in Physik, Technik und Verkehr.</p>
+          <p>Die SI-nahe Basiseinheit ist Meter pro Sekunde (m/s), w&auml;hrend im Alltag meist Kilometer pro Stunde (km/h) verwendet werden. In ангloamerikanischen L&auml;ndern ist die Angabe in Meilen pro Stunde &uuml;blich, w&auml;hrend in der Seefahrt und Luftfahrt der Knoten verwendet wird, der auf Seemeilen basiert.</p>
+          <p>Ein besonders bedeutender Wert ist die Lichtgeschwindigkeit im Vakuum, die als h&ouml;chste m&ouml;gliche Geschwindigkeit im Universum gilt. Keine Information und kein Objekt mit Masse kann diese Grenze &uuml;berschreiten. Im Gegensatz dazu h&auml;ngt die Schallgeschwindigkeit stark vom Medium ab, in dem sich der Schall ausbreitet.</p>
+          <p>Geschwindigkeit spielt auch bei Rekorden eine Rolle, etwa im Motorsport oder in der Raumfahrt, wo extreme Werte erreicht werden und pr&auml;zise Messungen unerl&auml;sslich sind.</p>
+        </div>
+        <div class="info">
+          <h3 id="speed-info-title">Info</h3>
+          <div id="speed-info-body" class="info-body"></div>
+        </div>
+      </section>
+</main>
+  </div>
+
+<footer class="site-footer">
+    <a href="/pages/impressum/">Impressum</a>
+    <span class="sep">|</span>
+    <a href="/pages/datenschutz/">Datenschutz</a>
+  </footer>
+
+  <script src="/js/script.js?v=33"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,132 @@
+﻿<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Umrechner - Elektronenvolt in BTU</title>
+  <link rel="stylesheet" href="/css/styles.css?v=5">
+</head>
+<body data-mode="energy" data-from="eV" data-to="BTU">
+<header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Umrechner</div>
+      <nav class="topnav">
+        <a href="/index.html" class="nav-link">Startseite</a>
+        <details class="nav-dropdown">
+          <summary>Einheiten</summary>
+          <div class="dropdown">
+            <a href="/pages/length/">L&auml;nge</a>
+            <a href="/pages/area/">Fl&auml;che</a>
+            <a href="/pages/weight/">Gewicht</a>
+            <a href="/pages/time/">Zeit</a>
+            <a href="/pages/speed/">Geschwindigkeit</a>
+            <a href="/pages/temperature/">Temperatur</a>
+            <a href="/pages/volume/">Volumen</a>
+            <a href="/pages/energy/">Energie</a>
+            <a href="/pages/pressure/">Druck</a>
+            <a href="/pages/power/">Leistung</a>
+            <a href="/pages/currency/">W&auml;hrung</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <main>
+<section class="card selector-card">
+        <h2>Alle Kategorien</h2>
+        <div class="category-buttons">
+          <a class="cat-btn" href="/pages/length/">L&auml;nge</a>
+          <a class="cat-btn" href="/pages/area/">Fl&auml;che</a>
+          <a class="cat-btn" href="/pages/weight/">Gewicht</a>
+          <a class="cat-btn" href="/pages/time/">Zeit</a>
+          <a class="cat-btn" href="/pages/speed/">Geschwindigkeit</a>
+          <a class="cat-btn" href="/pages/temperature/">Temperatur</a>
+          <a class="cat-btn" href="/pages/volume/">Volumen</a>
+          <a class="cat-btn" href="/pages/energy/">Energie</a>
+          <a class="cat-btn" href="/pages/pressure/">Druck</a>
+          <a class="cat-btn" href="/pages/power/">Leistung</a>
+          <a class="cat-btn" href="/pages/currency/">W&auml;hrung</a>
+        </div>
+      </section>
+
+<section class="card" id="card-energy">
+        <h2 id="energy-title">Elektronenvolt in BTU</h2>
+        <div class="row">
+          <label for="energy-input" id="energy-label">Wert</label>
+          <input id="energy-input" type="number" inputmode="decimal" step="any" value="1">
+        </div>
+        <div class="row">
+          <label for="energy-from" id="label-from-energy">von</label>
+          <select id="energy-from"></select>
+        </div>
+        <div class="row swap-row">
+          <button type="button" class="swap-btn" data-mode="energy" aria-label="Einheiten tauschen">&#8644;</button>
+        </div>
+        <div class="row">
+          <label for="energy-to" id="label-to-energy">nach</label>
+          <select id="energy-to"></select>
+        </div>
+        <div class="row">
+          <button id="energy-convert">Umrechnen</button>
+          <div id="energy-result" class="result">&mdash;</div>
+        </div>
+        <div id="energy-calc" class="calc"></div>
+        <div class="info-body area-note">
+          <h3>Energie</h3>
+          <p>Energie ist die F&auml;higkeit eines Systems, Arbeit zu verrichten oder W&auml;rme zu &uuml;bertragen. Sie ist eine der zentralen Gr&ouml;&szlig;en der Physik und verbindet mechanische, thermische, elektrische und chemische Prozesse.</p>
+          <p>Die Basiseinheit der Energie ist das Joule (J). Im Alltag begegnet uns Energie jedoch meist in anderen Einheiten, etwa in Kilowattstunden beim Stromverbrauch oder in Kalorien bei der Ern&auml;hrung. In der Teilchenphysik wird h&auml;ufig das Elektronenvolt verwendet, da es f&uuml;r sehr kleine Energiemengen geeignet ist.</p>
+          <p>Ein fundamentales Prinzip ist der Energieerhaltungssatz: Energie kann weder erzeugt noch vernichtet, sondern nur in andere Formen umgewandelt werden. Dieses Prinzip gilt von allt&auml;glichen Vorg&auml;ngen bis hin zu kosmischen Prozessen.</p>
+        </div>
+        <div class="info">
+          <h3 id="energy-info-title">Info</h3>
+          <div id="energy-info-body" class="info-body"></div>
+        </div>
+      </section>
+</main>
+  </div>
+
+<footer class="site-footer">
+    <a href="/pages/impressum/">Impressum</a>
+    <span class="sep">|</span>
+    <a href="/pages/datenschutz/">Datenschutz</a>
+  </footer>
+
+  <script src="/js/script.js?v=33"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,134 @@
+﻿<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Umrechner - Horsepower in Gigawatt</title>
+  <link rel="stylesheet" href="/css/styles.css?v=5">
+</head>
+<body data-mode="power" data-from="hp" data-to="GW">
+<header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Umrechner</div>
+      <nav class="topnav">
+        <a href="/index.html" class="nav-link">Startseite</a>
+        <details class="nav-dropdown">
+          <summary>Einheiten</summary>
+          <div class="dropdown">
+            <a href="/pages/length/">L&auml;nge</a>
+            <a href="/pages/area/">Fl&auml;che</a>
+            <a href="/pages/weight/">Gewicht</a>
+            <a href="/pages/time/">Zeit</a>
+            <a href="/pages/speed/">Geschwindigkeit</a>
+            <a href="/pages/temperature/">Temperatur</a>
+            <a href="/pages/volume/">Volumen</a>
+            <a href="/pages/energy/">Energie</a>
+            <a href="/pages/pressure/">Druck</a>
+            <a href="/pages/power/">Leistung</a>
+            <a href="/pages/currency/">W&auml;hrung</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <main>
+<section class="card selector-card">
+        <h2>Alle Kategorien</h2>
+        <div class="category-buttons">
+          <a class="cat-btn" href="/pages/length/">L&auml;nge</a>
+          <a class="cat-btn" href="/pages/area/">Fl&auml;che</a>
+          <a class="cat-btn" href="/pages/weight/">Gewicht</a>
+          <a class="cat-btn" href="/pages/time/">Zeit</a>
+          <a class="cat-btn" href="/pages/speed/">Geschwindigkeit</a>
+          <a class="cat-btn" href="/pages/temperature/">Temperatur</a>
+          <a class="cat-btn" href="/pages/volume/">Volumen</a>
+          <a class="cat-btn" href="/pages/energy/">Energie</a>
+          <a class="cat-btn" href="/pages/pressure/">Druck</a>
+          <a class="cat-btn" href="/pages/power/">Leistung</a>
+          <a class="cat-btn" href="/pages/currency/">W&auml;hrung</a>
+        </div>
+      </section>
+
+<section class="card" id="card-power">
+        <h2 id="power-title">Horsepower in Gigawatt</h2>
+        <div class="row">
+          <label for="power-input" id="power-label">Wert</label>
+          <input id="power-input" type="number" inputmode="decimal" step="any" value="1">
+        </div>
+        <div class="row">
+          <label for="power-from" id="label-from-power">von</label>
+          <select id="power-from"></select>
+        </div>
+        <div class="row swap-row">
+          <button type="button" class="swap-btn" data-mode="power" aria-label="Einheiten tauschen">&#8644;</button>
+        </div>
+        <div class="row">
+          <label for="power-to" id="label-to-power">nach</label>
+          <select id="power-to"></select>
+        </div>
+        <div class="row">
+          <button id="power-convert">Umrechnen</button>
+          <div id="power-result" class="result">&mdash;</div>
+        </div>
+        <div id="power-calc" class="calc"></div>
+        <div class="info-body area-note">
+          <h3>Leistung</h3>
+          <p>Leistung beschreibt, wie schnell Energie umgesetzt oder Arbeit verrichtet wird. Die SI-Einheit ist das Watt (W), definiert als 1 Joule pro Sekunde.</p>
+          <p>H&ouml;here Einheiten wie Kilowatt (kW), Megawatt (MW) und Gigawatt (GW) werden f&uuml;r Maschinen, Kraftwerke und Stromnetze verwendet. PS und hp sind traditionelle Einheiten, die im Technik- und Automobilbereich noch genutzt werden.</p>
+          <p>Merke: 1 kW = 1000 W. 1 PS = 735,49875 W. 1 hp = 745,699872 W.</p>
+        </div>
+        <div class="info">
+          <h3 id="power-info-title">Info</h3>
+          <div id="power-info-body" class="info-body"></div>
+        </div>
+      </section>
+</main>
+  </div>
+
+<footer class="site-footer">
+    <a href="/pages/impressum/">Impressum</a>
+    <span class="sep">|</span>
+    <a href="/pages/datenschutz/">Datenschutz</a>
+  </footer>
+
+  <script src="/js/script.js?v=33"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

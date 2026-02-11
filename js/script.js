@@ -1,4 +1,4 @@
-/* Simple static converter with translations and exchange-rate fetch */
+﻿/* Simple static converter with translations and exchange-rate fetch */
 const translations = {de:null};
 const currentLang = 'de';
 
@@ -86,6 +86,7 @@ const energyUnits = {
   BTU: 1055.05585262
 };
 
+
 const pressureUnits = {
   Pa: 1,
   kPa: 1000,
@@ -95,6 +96,15 @@ const pressureUnits = {
   atm: 101325,
   mmHg: 133.322,
   inHg: 3386.389
+};
+
+const powerUnits = {
+  W: 1,
+  kW: 1000,
+  MW: 1000000,
+  GW: 1000000000,
+  PS: 735.49875,
+  hp: 745.699872
 };
 
 const tempUnits = ['C','F','K','R'];
@@ -116,7 +126,7 @@ const unitLabels = {
     m: 'Meter (m)',
     km: 'Kilometer (km)',
     in: 'Zoll (in)',
-    ft: 'Fuß (ft)',
+    ft: 'FuÃŸ (ft)',
     yd: 'Yard (yd)',
     mi: 'Meile (mi)',
     nmi: 'Seemeile (nmi)'
@@ -129,7 +139,7 @@ const unitLabels = {
     ha: 'Hektar (ha)',
     km2: 'Quadratkilometer (km2)',
     in2: 'Quadratzoll (in2)',
-    ft2: 'Quadratfuß (ft2)',
+    ft2: 'QuadratfuÃŸ (ft2)',
     yd2: 'Quadratyard (yd2)',
     ac: 'Acre (ac)',
     mi2: 'Quadratmeile (mi2)'
@@ -160,14 +170,14 @@ const unitLabels = {
     'km/s': 'Kilometer pro Sekunde (km/s)',
     mph: 'Meilen pro Stunde (mph)',
     kn: 'Knoten (kn)',
-    'ft/s': 'Fuß pro Sekunde (ft/s)'
+    'ft/s': 'FuÃŸ pro Sekunde (ft/s)'
   },
   volume: {
     ml: 'Milliliter (ml)',
     l: 'Liter (l)',
     m3: 'Kubikmeter (m3)',
-    tsp: 'Teelöffel (tsp)',
-    tbsp: 'Esslöffel (tbsp)',
+    tsp: 'TeelÃ¶ffel (tsp)',
+    tbsp: 'EsslÃ¶ffel (tbsp)',
     cup: 'Tasse (cup)',
     pt: 'Pint (pt)',
     qt: 'Quart (qt)',
@@ -190,9 +200,17 @@ const unitLabels = {
     MPa: 'Megapascal (MPa)',
     bar: 'Bar (bar)',
     psi: 'Pfund pro Quadratzoll (psi)',
-    atm: 'Atmosphäre (atm)',
-    mmHg: 'Millimeter Quecksilbersäule (mmHg)',
-    inHg: 'Zoll Quecksilbersäule (inHg)'
+    atm: 'AtmosphÃ¤re (atm)',
+    mmHg: 'Millimeter QuecksilbersÃ¤ule (mmHg)',
+    inHg: 'Zoll QuecksilbersÃ¤ule (inHg)'
+  },
+  power: {
+    W: 'Watt (W)',
+    kW: 'Kilowatt (kW)',
+    MW: 'Megawatt (MW)',
+    GW: 'Gigawatt (GW)',
+    PS: 'Pferdestärke (PS)',
+    hp: 'Horsepower (hp)'
   },
   temperature: {
     C: 'Celsius (C)',
@@ -211,35 +229,35 @@ const unitLabels = {
     CNY: 'Chinesischer Yuan (CNY)',
     SEK: 'Schwedische Krone (SEK)',
     NOK: 'Norwegische Krone (NOK)',
-    DKK: 'Dänische Krone (DKK)',
-    PLN: 'Polnischer Złoty (PLN)',
+    DKK: 'DÃ¤nische Krone (DKK)',
+    PLN: 'Polnischer ZÅ‚oty (PLN)',
     CZK: 'Tschechische Krone (CZK)',
     HUF: 'Ungarischer Forint (HUF)',
-    RON: 'Rumänischer Leu (RON)',
+    RON: 'RumÃ¤nischer Leu (RON)',
     BGN: 'Bulgarischer Lew (BGN)',
-    TRY: 'Türkische Lira (TRY)',
+    TRY: 'TÃ¼rkische Lira (TRY)',
     ILS: 'Israelischer Schekel (ILS)',
     SAR: 'Saudi-Riyal (SAR)',
     AED: 'VAE-Dirham (AED)',
     QAR: 'Katar-Riyal (QAR)',
     KWD: 'Kuwait-Dinar (KWD)',
     INR: 'Indische Rupie (INR)',
-    KRW: 'Südkoreanischer Won (KRW)',
+    KRW: 'SÃ¼dkoreanischer Won (KRW)',
     SGD: 'Singapur-Dollar (SGD)',
     HKD: 'Hongkong-Dollar (HKD)',
     TWD: 'Neuer Taiwan-Dollar (TWD)',
-    THB: 'Thailändischer Baht (THB)',
+    THB: 'ThailÃ¤ndischer Baht (THB)',
     MYR: 'Malaysischer Ringgit (MYR)',
     IDR: 'Indonesische Rupiah (IDR)',
     PHP: 'Philippinischer Peso (PHP)',
-    VND: 'Vietnamesischer Đồng (VND)',
+    VND: 'Vietnamesischer Äá»“ng (VND)',
     MXN: 'Mexikanischer Peso (MXN)',
     BRL: 'Brasilianischer Real (BRL)',
     ARS: 'Argentinischer Peso (ARS)',
     CLP: 'Chilenischer Peso (CLP)',
     COP: 'Kolumbianischer Peso (COP)',
     PEN: 'Peruanischer Sol (PEN)',
-    ZAR: 'Südafrikanischer Rand (ZAR)',
+    ZAR: 'SÃ¼dafrikanischer Rand (ZAR)',
     NZD: 'Neuseeland-Dollar (NZD)'
   }
 };
@@ -287,6 +305,7 @@ function applyTranslations(){
   setText('mode-volume', 'volume');
   setText('mode-energy', 'energy');
   setText('mode-pressure', 'pressure');
+  setText('mode-power', 'power');
   setText('mode-currency', 'currency');
 
   setText('length-title', 'length');
@@ -343,6 +362,12 @@ function applyTranslations(){
   setText('label-to-pressure', 'to');
   setText('pressure-convert', 'convert');
 
+  setText('power-title', 'power');
+  setText('power-label', 'value');
+  setText('label-from-power', 'from');
+  setText('label-to-power', 'to');
+  setText('power-convert', 'convert');
+
   setText('currency-title', 'currency');
   setText('currency-label', 'amount');
   setText('label-from-currency', 'from');
@@ -367,9 +392,17 @@ function applyTranslations(){
   setInfo('volume-info-title', 'volume-info-body', 'volume_info_title', 'volume_info_body');
   setInfo('energy-info-title', 'energy-info-body', 'energy_info_title', 'energy_info_body');
   setInfo('pressure-info-title', 'pressure-info-body', 'pressure_info_title', 'pressure_info_body');
+  setInfo('power-info-title', 'power-info-body', 'power_info_title', 'power_info_body');
   setInfo('currency-info-title', 'currency-info-body', 'currency_info_title', 'currency_info_body');
   setInfo('intro-title', 'intro-text', 'intro_title', 'intro_text');
   setInfo('overview-title', 'overview-text', 'overview_title', 'overview_text');
+}
+
+function navigateToPair(mode, from, to){
+  if(!from || !to || from === to) return;
+  const slug = (u) => mode === 'speed' ? u.replace(/\//g, '-') : u;
+  const target = `/pages/${mode}/${slug(from)}-zu-${slug(to)}/`;
+  if(window.location.pathname !== target) window.location.href = target;
 }
 
 function setMode(mode){
@@ -383,6 +416,7 @@ function setMode(mode){
     volume: 'card-volume',
     energy: 'card-energy',
     pressure: 'card-pressure',
+    power: 'card-power',
     currency: 'card-currency'
   };
   Object.entries(cards).forEach(([key, id])=>{
@@ -458,6 +492,11 @@ function doLength(){
   const calcEl = $('length-calc');
   if(resultEl) resultEl.textContent = `${res} ${to}`;
   if(calcEl) calcEl.textContent = `${t('calculation')}: ${fmt(v)} ${from} x (${fmt(lengthUnits[from])} / ${fmt(lengthUnits[to])}) = ${fmt(res)} ${to}`;
+  if(from !== to){
+    const target = `/pages/length/${from}-zu-${to}/`;
+    const path = window.location.pathname;
+    if(path !== target) window.location.href = target;
+  }
 }
 
 function doArea(){
@@ -473,6 +512,11 @@ function doArea(){
   const calcEl = $('area-calc');
   if(resultEl) resultEl.textContent = `${res} ${to}`;
   if(calcEl) calcEl.textContent = `${t('calculation')}: ${fmt(v)} ${from} x (${fmt(areaUnits[from])} / ${fmt(areaUnits[to])}) = ${fmt(res)} ${to}`;
+  if(from !== to){
+    const target = `/pages/area/${from}-zu-${to}/`;
+    const path = window.location.pathname;
+    if(path !== target) window.location.href = target;
+  }
 }
 
 function doWeight(){
@@ -488,6 +532,11 @@ function doWeight(){
   const calcEl = $('weight-calc');
   if(resultEl) resultEl.textContent = `${res} ${to}`;
   if(calcEl) calcEl.textContent = `${t('calculation')}: ${fmt(v)} ${from} x (${fmt(weightUnits[from])} / ${fmt(weightUnits[to])}) = ${fmt(res)} ${to}`;
+  if(from !== to){
+    const target = `/pages/weight/${from}-zu-${to}/`;
+    const path = window.location.pathname;
+    if(path !== target) window.location.href = target;
+  }
 }
 
 function doTime(){
@@ -503,6 +552,11 @@ function doTime(){
   const calcEl = $('time-calc');
   if(resultEl) resultEl.textContent = `${res} ${to}`;
   if(calcEl) calcEl.textContent = `${t('calculation')}: ${fmt(v)} ${from} x (${fmt(timeUnits[from])} / ${fmt(timeUnits[to])}) = ${fmt(res)} ${to}`;
+  if(from !== to){
+    const target = `/pages/time/${from}-zu-${to}/`;
+    const path = window.location.pathname;
+    if(path !== target) window.location.href = target;
+  }
 }
 
 function doSpeed(){
@@ -518,6 +572,12 @@ function doSpeed(){
   const calcEl = $('speed-calc');
   if(resultEl) resultEl.textContent = `${res} ${to}`;
   if(calcEl) calcEl.textContent = `${t('calculation')}: ${fmt(v)} ${from} x (${fmt(speedUnits[from])} / ${fmt(speedUnits[to])}) = ${fmt(res)} ${to}`;
+  if(from !== to){
+    const slug = (u) => u.replace(/\//g, '-');
+    const target = `/pages/speed/${slug(from)}-zu-${slug(to)}/`;
+    const path = window.location.pathname;
+    if(path !== target) window.location.href = target;
+  }
 }
 
 function doTemperature(){
@@ -533,6 +593,11 @@ function doTemperature(){
   const calcEl = $('temperature-calc');
   if(resultEl) resultEl.textContent = `${res} ${to}`;
   if(calcEl) calcEl.textContent = tempFormula(v, from, to, res);
+  if(from !== to){
+    const target = `/pages/temperature/${from}-zu-${to}/`;
+    const path = window.location.pathname;
+    if(path !== target) window.location.href = target;
+  }
 }
 
 function doVolume(){
@@ -548,6 +613,11 @@ function doVolume(){
   const calcEl = $('volume-calc');
   if(resultEl) resultEl.textContent = `${res} ${to}`;
   if(calcEl) calcEl.textContent = `${t('calculation')}: ${fmt(v)} ${from} x (${fmt(volumeUnits[from])} / ${fmt(volumeUnits[to])}) = ${fmt(res)} ${to}`;
+  if(from !== to){
+    const target = `/pages/volume/${from}-zu-${to}/`;
+    const path = window.location.pathname;
+    if(path !== target) window.location.href = target;
+  }
 }
 
 function doEnergy(){
@@ -563,7 +633,34 @@ function doEnergy(){
   const calcEl = $('energy-calc');
   if(resultEl) resultEl.textContent = `${res} ${to}`;
   if(calcEl) calcEl.textContent = `${t('calculation')}: ${fmt(v)} ${from} x (${fmt(energyUnits[from])} / ${fmt(energyUnits[to])}) = ${fmt(res)} ${to}`;
+  if(from !== to){
+    const target = `/pages/energy/${from}-zu-${to}/`;
+    const path = window.location.pathname;
+    if(path !== target) window.location.href = target;
+  }
 }
+
+function doPower(){
+  const input = $('power-input');
+  const fromEl = $('power-from');
+  const toEl = $('power-to');
+  if(!input || !fromEl || !toEl) return;
+  const v = parseFloat(input.value) || 0;
+  const from = fromEl.value;
+  const to = toEl.value;
+  const res = convertUnits(v, powerUnits[from], powerUnits[to]);
+  const resultEl = $('power-result');
+  const calcEl = $('power-calc');
+  if(resultEl) resultEl.textContent = `${res} ${to}`;
+  if(calcEl) calcEl.textContent = `${t('calculation')}: ${fmt(v)} ${from} x (${fmt(powerUnits[from])} / ${fmt(powerUnits[to])}) = ${fmt(res)} ${to}`;
+  if(from !== to){
+    const target = `/pages/power/${from}-zu-${to}/`;
+    const path = window.location.pathname;
+    if(path !== target) window.location.href = target;
+  }
+}
+
+
 
 function doPressure(){
   const input = $('pressure-input');
@@ -578,6 +675,11 @@ function doPressure(){
   const calcEl = $('pressure-calc');
   if(resultEl) resultEl.textContent = `${res} ${to}`;
   if(calcEl) calcEl.textContent = `${t('calculation')}: ${fmt(v)} ${from} x (${fmt(pressureUnits[from])} / ${fmt(pressureUnits[to])}) = ${fmt(res)} ${to}`;
+  if(from !== to){
+    const target = `/pages/pressure/${from}-zu-${to}/`;
+    const path = window.location.pathname;
+    if(path !== target) window.location.href = target;
+  }
 }
 
 const converters = {
@@ -586,6 +688,7 @@ const converters = {
   weight: doWeight,
   time: doTime,
   speed: doSpeed,
+  power: doPower,
   temperature: doTemperature,
   volume: doVolume,
   energy: doEnergy,
@@ -612,6 +715,11 @@ async function doCurrency(){
   const v = parseFloat(input.value) || 0;
   const from = fromEl.value;
   const to = toEl.value;
+  if(from !== to){
+    const target = `/pages/currency/${from}-zu-${to}/`;
+    const path = window.location.pathname;
+    if(path !== target) window.location.href = target;
+  }
   if(v === 0){
     const resultEl = $('currency-result');
     if(resultEl) resultEl.textContent = `0.0000 ${to}`;
@@ -647,9 +755,9 @@ async function doCurrency(){
 }
 
 async function loadLocales(){
-  const localeVersion = '10';
+  const localeVersion = '11';
   const [de] = await Promise.all([
-    fetch(`locales/de.json?v=${localeVersion}`).then(r=>r.json())
+    fetch(`/locales/de.json?v=${localeVersion}`).then(r=>r.json())
   ]);
   translations.de = de;
   applyTranslations();
@@ -657,7 +765,7 @@ async function loadLocales(){
 
 function setup(){
   const validModes = new Set([
-    'length','area','weight','time','speed','temperature','volume','energy','pressure','currency'
+    'length','area','weight','time','speed','temperature','volume','energy','pressure','power','currency'
   ]);
   const getInitialMode = () => {
     const params = new URLSearchParams(window.location.search);
@@ -687,6 +795,8 @@ function setup(){
   const energyTo = $('energy-to');
   const pressureFrom = $('pressure-from');
   const pressureTo = $('pressure-to');
+  const powerFrom = $('power-from');
+  const powerTo = $('power-to');
   const currencyFrom = $('currency-from');
   const currencyTo = $('currency-to');
 
@@ -708,6 +818,8 @@ function setup(){
   if(energyTo) populateSelect(energyTo, Object.keys(energyUnits), unitLabels.energy);
   if(pressureFrom) populateSelect(pressureFrom, Object.keys(pressureUnits), unitLabels.pressure);
   if(pressureTo) populateSelect(pressureTo, Object.keys(pressureUnits), unitLabels.pressure);
+  if(powerFrom) populateSelect(powerFrom, Object.keys(powerUnits), unitLabels.power);
+  if(powerTo) populateSelect(powerTo, Object.keys(powerUnits), unitLabels.power);
   if(currencyFrom) populateSelect(currencyFrom, currencies, unitLabels.currency);
   if(currencyTo) populateSelect(currencyTo, currencies, unitLabels.currency);
 
@@ -729,8 +841,66 @@ function setup(){
   if(energyTo) energyTo.value = 'Wh';
   if(pressureFrom) pressureFrom.value = 'bar';
   if(pressureTo) pressureTo.value = 'psi';
+  if(powerFrom) powerFrom.value = 'W';
+  if(powerTo) powerTo.value = 'kW';
   if(currencyFrom) currencyFrom.value = 'EUR';
   if(currencyTo) currencyTo.value = 'USD';
+  const bodyMode = document.body?.dataset?.mode;
+  const bodyFrom = document.body?.dataset?.from;
+  const bodyTo = document.body?.dataset?.to;
+  const modeSelects = {
+    length: {from: lengthFrom, to: lengthTo},
+    area: {from: areaFrom, to: areaTo},
+    weight: {from: weightFrom, to: weightTo},
+    time: {from: timeFrom, to: timeTo},
+    speed: {from: speedFrom, to: speedTo},
+    power: {from: powerFrom, to: powerTo},
+    temperature: {from: temperatureFrom, to: temperatureTo},
+    volume: {from: volumeFrom, to: volumeTo},
+    energy: {from: energyFrom, to: energyTo},
+    pressure: {from: pressureFrom, to: pressureTo},
+    currency: {from: currencyFrom, to: currencyTo}
+  };
+  const setIfExists = (select, value) => {
+    if(!select || !value) return;
+    const exists = Array.from(select.options).some(o => o.value === value);
+    if(exists) select.value = value;
+  };
+  if(bodyMode && modeSelects[bodyMode]){
+    setIfExists(modeSelects[bodyMode].from, bodyFrom);
+    setIfExists(modeSelects[bodyMode].to, bodyTo);
+  }
+  const bindPairNav = (mode, fromEl, toEl) => {
+    if(!fromEl || !toEl) return;
+    const handler = () => navigateToPair(mode, fromEl.value, toEl.value);
+    fromEl.addEventListener('change', handler);
+    toEl.addEventListener('change', handler);
+  };
+  bindPairNav('length', lengthFrom, lengthTo);
+  bindPairNav('area', areaFrom, areaTo);
+  bindPairNav('weight', weightFrom, weightTo);
+  bindPairNav('time', timeFrom, timeTo);
+  bindPairNav('speed', speedFrom, speedTo);
+  bindPairNav('temperature', temperatureFrom, temperatureTo);
+  bindPairNav('volume', volumeFrom, volumeTo);
+  bindPairNav('energy', energyFrom, energyTo);
+  bindPairNav('pressure', pressureFrom, pressureTo);
+  bindPairNav('power', powerFrom, powerTo);
+  bindPairNav('currency', currencyFrom, currencyTo);
+  const pairModes = new Set([
+    'length','area','weight','time','speed','temperature','volume','energy','pressure','power','currency'
+  ]);
+  document.addEventListener('change', (e) => {
+    const target = e.target;
+    if(!(target instanceof HTMLSelectElement)) return;
+    const id = target.id || '';
+    if(!id.endsWith('-from') && !id.endsWith('-to')) return;
+    const mode = id.split('-')[0];
+    if(!pairModes.has(mode)) return;
+    const fromEl = $(`${mode}-from`);
+    const toEl = $(`${mode}-to`);
+    if(fromEl && toEl) navigateToPair(mode, fromEl.value, toEl.value);
+  });
   const initialMode = getInitialMode();
   const modeSelect = $('mode-select');
   const isCategoryPage = Boolean(document.body?.dataset?.mode) && window.location.pathname.includes('/pages/');
@@ -744,6 +914,7 @@ function setup(){
   on('temperature-convert', 'click', doTemperature);
   on('volume-convert', 'click', doVolume);
   on('energy-convert', 'click', doEnergy);
+  on('power-convert', 'click', doPower);
   on('pressure-convert', 'click', doPressure);
   on('currency-convert', 'click', doCurrency);
   on('mode-select', 'change', (e)=> {
@@ -763,6 +934,7 @@ function setup(){
   on('temperature-input', 'input', doTemperature);
   on('volume-input', 'input', doVolume);
   on('energy-input', 'input', doEnergy);
+  on('power-input', 'input', doPower);
   on('pressure-input', 'input', doPressure);
   on('length-from', 'change', doLength);
   on('length-to', 'change', doLength);
@@ -772,17 +944,35 @@ function setup(){
   on('weight-to', 'change', doWeight);
   on('time-from', 'change', doTime);
   on('time-to', 'change', doTime);
+  on('time-from', 'input', doTime);
+  on('time-to', 'input', doTime);
   on('speed-from', 'change', doSpeed);
   on('speed-to', 'change', doSpeed);
+  on('speed-from', 'input', doSpeed);
+  on('speed-to', 'input', doSpeed);
   on('temperature-from', 'change', doTemperature);
   on('temperature-to', 'change', doTemperature);
+  on('temperature-from', 'input', doTemperature);
+  on('temperature-to', 'input', doTemperature);
   on('volume-from', 'change', doVolume);
   on('volume-to', 'change', doVolume);
+  on('volume-from', 'input', doVolume);
+  on('volume-to', 'input', doVolume);
   on('energy-from', 'change', doEnergy);
   on('energy-to', 'change', doEnergy);
+  on('energy-from', 'input', doEnergy);
+  on('energy-to', 'input', doEnergy);
+  on('power-from', 'change', doPower);
+  on('power-to', 'change', doPower);
+  on('power-from', 'input', doPower);
+  on('power-to', 'input', doPower);
   on('pressure-from', 'change', doPressure);
   on('pressure-to', 'change', doPressure);
+  on('pressure-from', 'input', doPressure);
+  on('pressure-to', 'input', doPressure);
   on('currency-input', 'input', ()=>{/* no auto to avoid API spam */});
+  on('currency-from', 'input', doCurrency);
+  on('currency-to', 'input', doCurrency);
 
   document.querySelectorAll('.swap-btn').forEach(btn => {
     btn.addEventListener('click', () => swapUnits(btn.dataset.mode));
@@ -793,3 +983,9 @@ function setup(){
 }
 
 window.addEventListener('DOMContentLoaded', setup);
+
+
+
+
+
+
