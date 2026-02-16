@@ -692,8 +692,7 @@ const converters = {
   temperature: doTemperature,
   volume: doVolume,
   energy: doEnergy,
-  pressure: doPressure,
-  currency: doCurrency
+  pressure: doPressure
 };
 
 function swapUnits(mode){
@@ -765,7 +764,7 @@ async function loadLocales(){
 
 function setup(){
   const validModes = new Set([
-    'length','area','weight','time','speed','temperature','volume','energy','pressure','power','currency'
+    'length','area','weight','time','speed','temperature','volume','energy','pressure','power'
   ]);
   const getInitialMode = () => {
     const params = new URLSearchParams(window.location.search);
@@ -846,6 +845,10 @@ function setup(){
   if(currencyFrom) currencyFrom.value = 'EUR';
   if(currencyTo) currencyTo.value = 'USD';
   const bodyMode = document.body?.dataset?.mode;
+  if(bodyMode === 'currency'){
+    window.location.href = '/index.html';
+    return;
+  }
   const bodyFrom = document.body?.dataset?.from;
   const bodyTo = document.body?.dataset?.to;
   const modeSelects = {
@@ -886,9 +889,8 @@ function setup(){
   bindPairNav('energy', energyFrom, energyTo);
   bindPairNav('pressure', pressureFrom, pressureTo);
   bindPairNav('power', powerFrom, powerTo);
-  bindPairNav('currency', currencyFrom, currencyTo);
   const pairModes = new Set([
-    'length','area','weight','time','speed','temperature','volume','energy','pressure','power','currency'
+    'length','area','weight','time','speed','temperature','volume','energy','pressure','power'
   ]);
   document.addEventListener('change', (e) => {
     const target = e.target;
@@ -916,7 +918,6 @@ function setup(){
   on('energy-convert', 'click', doEnergy);
   on('power-convert', 'click', doPower);
   on('pressure-convert', 'click', doPressure);
-  on('currency-convert', 'click', doCurrency);
   on('mode-select', 'change', (e)=> {
     const value = e.target.value;
     if(isCategoryPage){
@@ -970,9 +971,6 @@ function setup(){
   on('pressure-to', 'change', doPressure);
   on('pressure-from', 'input', doPressure);
   on('pressure-to', 'input', doPressure);
-  on('currency-input', 'input', ()=>{/* no auto to avoid API spam */});
-  on('currency-from', 'input', doCurrency);
-  on('currency-to', 'input', doCurrency);
 
   document.querySelectorAll('.swap-btn').forEach(btn => {
     btn.addEventListener('click', () => swapUnits(btn.dataset.mode));
