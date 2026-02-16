@@ -755,7 +755,7 @@ async function doCurrency(){
 }
 
 async function loadLocales(){
-  const localeVersion = '11';
+  const localeVersion = '12';
   const [de] = await Promise.all([
     fetch(`/locales/de.json?v=${localeVersion}`).then(r=>r.json())
   ]);

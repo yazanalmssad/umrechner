@@ -18,7 +18,7 @@
     "currency":  "Währung",
     "amount":  "Betrag",
     "instruction_title":  "Anleitung",
-    "instruction_text":  "Wähle oben die Kategorie (Länge, Fläche, Gewicht, Zeit, Geschwindigkeit, Temperatur, Volumen, Energie, Druck, Leistung oder Währung). Gib einen Wert ein, wähle die Einheiten bei \"von\" und \"nach\" und klicke auf \"Umrechnen\" (bei allen Einheiten außer Währung wird auch live beim Tippen umgerechnet). Die Währungsumrechnung nutzt Live-Kurse und kann bei fehlender Internetverbindung nicht laden.",
+    "instruction_text":  "Wähle oben die Kategorie (Länge, Fläche, Gewicht, Zeit, Geschwindigkeit, Temperatur, Volumen, Energie, Druck oder Leistung). Gib einen Wert ein, wähle die Einheiten bei \"von\" und \"nach\" und klicke auf \"Umrechnen\" (bei den Einheiten wird auch live beim Tippen umgerechnet).",
     "loading":  "Lade...",
     "error":  "Fehler beim Laden",
     "length_info_title":  "Länge - Hintergrund und Beispiele",
@@ -44,8 +44,9 @@
     "intro_title":  "Willkommen",
     "intro_text":  "Dieser Umrechner bietet mehrere Einheitenkategorien in einer klaren, einheitlichen Oberfläche. Du kannst Werte eingeben, Einheiten auswählen und die Ergebnisse inklusive Rechenweg direkt sehen.",
     "overview_title":  "Inhalte",
-    "overview_text":  "\u003cul\u003e\u003cli\u003eLänge, Fläche und Gewicht für klassische SI-Umrechnungen\u003c/li\u003e\u003cli\u003eZeit und Geschwindigkeit für Alltag und Technik\u003c/li\u003e\u003cli\u003eTemperatur, Volumen, Energie, Druck und Leistung für praktische Anwendungen\u003c/li\u003e\u003cli\u003eWährung mit Live-Kursen (Internet erforderlich)\u003c/li\u003e\u003c/ul\u003e",
+    "overview_text":  "\u003cul\u003e\u003cli\u003eLänge, Fläche und Gewicht für klassische SI-Umrechnungen\u003c/li\u003e\u003cli\u003eZeit und Geschwindigkeit für Alltag und Technik\u003c/li\u003e\u003cli\u003eTemperatur, Volumen, Energie, Druck und Leistung für praktische Anwendungen\u003c/li\u003e\u003c/ul\u003e",
     "power":  "Leistung",
     "power_info_title":  "Leistung - Hintergrund und Beispiele",
     "power_info_body":  "\u003cp\u003eLeistung beschreibt die umgesetzte Energie pro Zeit. Die Basiseinheit ist das Watt (W) = 1 Joule pro Sekunde.\u003c/p\u003e\u003cp\u003eGrößere Einheiten wie kW, MW und GW werden für Maschinen und Kraftwerke genutzt. PS und hp sind traditionelle Einheiten, die vor allem im Kfz-Bereich vorkommen.\u003c/p\u003e\u003cul\u003e\u003cli\u003eBeispiel: 1 kW = 1000 W\u003c/li\u003e\u003cli\u003eBeispiel: 1 PS = 735,49875 W\u003c/li\u003e\u003cli\u003eBeispiel: 1 hp = 745,699872 W\u003c/li\u003e\u003c/ul\u003e"
 }
+
