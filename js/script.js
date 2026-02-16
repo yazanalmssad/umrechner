@@ -1,6 +1,8 @@
 ﻿/* Simple static converter with translations and exchange-rate fetch */
 const translations = {de:null};
 const currentLang = 'de';
+const BASE_PATH = '/umrechner';
+const withBase = (path) => `${BASE_PATH}${path}`;
 
 const lengthUnits = {
   nm: 0.000000001,
@@ -401,7 +403,7 @@ function applyTranslations(){
 function navigateToPair(mode, from, to){
   if(!from || !to || from === to) return;
   const slug = (u) => mode === 'speed' ? u.replace(/\//g, '-') : u;
-  const target = `/pages/${mode}/${slug(from)}-zu-${slug(to)}/`;
+  const target = withBase(`/pages/${mode}/${slug(from)}-zu-${slug(to)}/`);
   if(window.location.pathname !== target) window.location.href = target;
 }
 
@@ -493,7 +495,7 @@ function doLength(){
   if(resultEl) resultEl.textContent = `${res} ${to}`;
   if(calcEl) calcEl.textContent = `${t('calculation')}: ${fmt(v)} ${from} x (${fmt(lengthUnits[from])} / ${fmt(lengthUnits[to])}) = ${fmt(res)} ${to}`;
   if(from !== to){
-    const target = `/pages/length/${from}-zu-${to}/`;
+    const target = withBase(`/pages/length/${from}-zu-${to}/`);
     const path = window.location.pathname;
     if(path !== target) window.location.href = target;
   }
@@ -513,7 +515,7 @@ function doArea(){
   if(resultEl) resultEl.textContent = `${res} ${to}`;
   if(calcEl) calcEl.textContent = `${t('calculation')}: ${fmt(v)} ${from} x (${fmt(areaUnits[from])} / ${fmt(areaUnits[to])}) = ${fmt(res)} ${to}`;
   if(from !== to){
-    const target = `/pages/area/${from}-zu-${to}/`;
+    const target = withBase(`/pages/area/${from}-zu-${to}/`);
     const path = window.location.pathname;
     if(path !== target) window.location.href = target;
   }
@@ -533,7 +535,7 @@ function doWeight(){
   if(resultEl) resultEl.textContent = `${res} ${to}`;
   if(calcEl) calcEl.textContent = `${t('calculation')}: ${fmt(v)} ${from} x (${fmt(weightUnits[from])} / ${fmt(weightUnits[to])}) = ${fmt(res)} ${to}`;
   if(from !== to){
-    const target = `/pages/weight/${from}-zu-${to}/`;
+    const target = withBase(`/pages/weight/${from}-zu-${to}/`);
     const path = window.location.pathname;
     if(path !== target) window.location.href = target;
   }
@@ -553,7 +555,7 @@ function doTime(){
   if(resultEl) resultEl.textContent = `${res} ${to}`;
   if(calcEl) calcEl.textContent = `${t('calculation')}: ${fmt(v)} ${from} x (${fmt(timeUnits[from])} / ${fmt(timeUnits[to])}) = ${fmt(res)} ${to}`;
   if(from !== to){
-    const target = `/pages/time/${from}-zu-${to}/`;
+    const target = withBase(`/pages/time/${from}-zu-${to}/`);
     const path = window.location.pathname;
     if(path !== target) window.location.href = target;
   }
@@ -574,7 +576,7 @@ function doSpeed(){
   if(calcEl) calcEl.textContent = `${t('calculation')}: ${fmt(v)} ${from} x (${fmt(speedUnits[from])} / ${fmt(speedUnits[to])}) = ${fmt(res)} ${to}`;
   if(from !== to){
     const slug = (u) => u.replace(/\//g, '-');
-    const target = `/pages/speed/${slug(from)}-zu-${slug(to)}/`;
+    const target = withBase(`/pages/speed/${slug(from)}-zu-${slug(to)}/`);
     const path = window.location.pathname;
     if(path !== target) window.location.href = target;
   }
@@ -594,7 +596,7 @@ function doTemperature(){
   if(resultEl) resultEl.textContent = `${res} ${to}`;
   if(calcEl) calcEl.textContent = tempFormula(v, from, to, res);
   if(from !== to){
-    const target = `/pages/temperature/${from}-zu-${to}/`;
+    const target = withBase(`/pages/temperature/${from}-zu-${to}/`);
     const path = window.location.pathname;
     if(path !== target) window.location.href = target;
   }
@@ -614,7 +616,7 @@ function doVolume(){
   if(resultEl) resultEl.textContent = `${res} ${to}`;
   if(calcEl) calcEl.textContent = `${t('calculation')}: ${fmt(v)} ${from} x (${fmt(volumeUnits[from])} / ${fmt(volumeUnits[to])}) = ${fmt(res)} ${to}`;
   if(from !== to){
-    const target = `/pages/volume/${from}-zu-${to}/`;
+    const target = withBase(`/pages/volume/${from}-zu-${to}/`);
     const path = window.location.pathname;
     if(path !== target) window.location.href = target;
   }
@@ -634,7 +636,7 @@ function doEnergy(){
   if(resultEl) resultEl.textContent = `${res} ${to}`;
   if(calcEl) calcEl.textContent = `${t('calculation')}: ${fmt(v)} ${from} x (${fmt(energyUnits[from])} / ${fmt(energyUnits[to])}) = ${fmt(res)} ${to}`;
   if(from !== to){
-    const target = `/pages/energy/${from}-zu-${to}/`;
+    const target = withBase(`/pages/energy/${from}-zu-${to}/`);
     const path = window.location.pathname;
     if(path !== target) window.location.href = target;
   }
@@ -654,7 +656,7 @@ function doPower(){
   if(resultEl) resultEl.textContent = `${res} ${to}`;
   if(calcEl) calcEl.textContent = `${t('calculation')}: ${fmt(v)} ${from} x (${fmt(powerUnits[from])} / ${fmt(powerUnits[to])}) = ${fmt(res)} ${to}`;
   if(from !== to){
-    const target = `/pages/power/${from}-zu-${to}/`;
+    const target = withBase(`/pages/power/${from}-zu-${to}/`);
     const path = window.location.pathname;
     if(path !== target) window.location.href = target;
   }
@@ -676,7 +678,7 @@ function doPressure(){
   if(resultEl) resultEl.textContent = `${res} ${to}`;
   if(calcEl) calcEl.textContent = `${t('calculation')}: ${fmt(v)} ${from} x (${fmt(pressureUnits[from])} / ${fmt(pressureUnits[to])}) = ${fmt(res)} ${to}`;
   if(from !== to){
-    const target = `/pages/pressure/${from}-zu-${to}/`;
+    const target = withBase(`/pages/pressure/${from}-zu-${to}/`);
     const path = window.location.pathname;
     if(path !== target) window.location.href = target;
   }
@@ -715,7 +717,7 @@ async function doCurrency(){
   const from = fromEl.value;
   const to = toEl.value;
   if(from !== to){
-    const target = `/pages/currency/${from}-zu-${to}/`;
+    const target = withBase(`/pages/currency/${from}-zu-${to}/`);
     const path = window.location.pathname;
     if(path !== target) window.location.href = target;
   }
@@ -756,7 +758,7 @@ async function doCurrency(){
 async function loadLocales(){
   const localeVersion = '12';
   const [de] = await Promise.all([
-    fetch(`/locales/de.json?v=${localeVersion}`).then(r=>r.json())
+    fetch(withBase(`/locales/de.json?v=${localeVersion}`)).then(r=>r.json())
   ]);
   translations.de = de;
   applyTranslations();
@@ -846,7 +848,7 @@ function setup(){
   if(currencyTo) currencyTo.value = 'USD';
   const bodyMode = document.body?.dataset?.mode;
   if(bodyMode === 'currency'){
-    window.location.href = '/index.html';
+    window.location.href = withBase('/index.html');
     return;
   }
   const bodyFrom = document.body?.dataset?.from;
@@ -921,7 +923,7 @@ function setup(){
   on('mode-select', 'change', (e)=> {
     const value = e.target.value;
     if(isCategoryPage){
-      window.location.href = `/pages/${value}/`;
+      window.location.href = withBase(`/pages/${value}/`);
       return;
     }
     setMode(value);
