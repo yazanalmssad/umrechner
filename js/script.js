@@ -1,7 +1,7 @@
 ﻿/* Simple static converter with translations and exchange-rate fetch */
 const translations = {de:null};
 const currentLang = 'de';
-const BASE_PATH = '/umrechner';
+const BASE_PATH = window.location.pathname.startsWith('/umrechner/') ? '/umrechner' : '';
 const withBase = (path) => `${BASE_PATH}${path}`;
 
 const lengthUnits = {
