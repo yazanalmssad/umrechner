@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yazanalmssad.github.io/umrechner/sitemap.xml
