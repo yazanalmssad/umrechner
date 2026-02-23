@@ -128,7 +128,7 @@ const unitLabels = {
     m: 'Meter (m)',
     km: 'Kilometer (km)',
     in: 'Zoll (in)',
-    ft: 'FuÃŸ (ft)',
+    ft: 'Fu\u00DF (ft)',
     yd: 'Yard (yd)',
     mi: 'Meile (mi)',
     nmi: 'Seemeile (nmi)'
@@ -141,7 +141,7 @@ const unitLabels = {
     ha: 'Hektar (ha)',
     km2: 'Quadratkilometer (km2)',
     in2: 'Quadratzoll (in2)',
-    ft2: 'QuadratfuÃŸ (ft2)',
+    ft2: 'Quadratfu\u00DF (ft2)',
     yd2: 'Quadratyard (yd2)',
     ac: 'Acre (ac)',
     mi2: 'Quadratmeile (mi2)'
@@ -172,14 +172,14 @@ const unitLabels = {
     'km/s': 'Kilometer pro Sekunde (km/s)',
     mph: 'Meilen pro Stunde (mph)',
     kn: 'Knoten (kn)',
-    'ft/s': 'FuÃŸ pro Sekunde (ft/s)'
+    'ft/s': 'Fu\u00DF pro Sekunde (ft/s)'
   },
   volume: {
     ml: 'Milliliter (ml)',
     l: 'Liter (l)',
     m3: 'Kubikmeter (m3)',
-    tsp: 'TeelÃ¶ffel (tsp)',
-    tbsp: 'EsslÃ¶ffel (tbsp)',
+    tsp: 'Teel\u00F6ffel (tsp)',
+    tbsp: 'Essl\u00F6ffel (tbsp)',
     cup: 'Tasse (cup)',
     pt: 'Pint (pt)',
     qt: 'Quart (qt)',
@@ -202,9 +202,9 @@ const unitLabels = {
     MPa: 'Megapascal (MPa)',
     bar: 'Bar (bar)',
     psi: 'Pfund pro Quadratzoll (psi)',
-    atm: 'AtmosphÃ¤re (atm)',
-    mmHg: 'Millimeter QuecksilbersÃ¤ule (mmHg)',
-    inHg: 'Zoll QuecksilbersÃ¤ule (inHg)'
+    atm: 'Atmosph\u00E4re (atm)',
+    mmHg: 'Millimeter Quecksilbers\u00E4ule (mmHg)',
+    inHg: 'Zoll Quecksilbers\u00E4ule (inHg)'
   },
   power: {
     W: 'Watt (W)',
@@ -231,24 +231,24 @@ const unitLabels = {
     CNY: 'Chinesischer Yuan (CNY)',
     SEK: 'Schwedische Krone (SEK)',
     NOK: 'Norwegische Krone (NOK)',
-    DKK: 'DÃ¤nische Krone (DKK)',
+    DKK: 'D\u00E4nische Krone (DKK)',
     PLN: 'Polnischer ZÅ‚oty (PLN)',
     CZK: 'Tschechische Krone (CZK)',
     HUF: 'Ungarischer Forint (HUF)',
-    RON: 'RumÃ¤nischer Leu (RON)',
+    RON: 'Rum\u00E4nischer Leu (RON)',
     BGN: 'Bulgarischer Lew (BGN)',
-    TRY: 'TÃ¼rkische Lira (TRY)',
+    TRY: 'T\u00FCrkische Lira (TRY)',
     ILS: 'Israelischer Schekel (ILS)',
     SAR: 'Saudi-Riyal (SAR)',
     AED: 'VAE-Dirham (AED)',
     QAR: 'Katar-Riyal (QAR)',
     KWD: 'Kuwait-Dinar (KWD)',
     INR: 'Indische Rupie (INR)',
-    KRW: 'SÃ¼dkoreanischer Won (KRW)',
+    KRW: 'S\u00FCdkoreanischer Won (KRW)',
     SGD: 'Singapur-Dollar (SGD)',
     HKD: 'Hongkong-Dollar (HKD)',
     TWD: 'Neuer Taiwan-Dollar (TWD)',
-    THB: 'ThailÃ¤ndischer Baht (THB)',
+    THB: 'Thail\u00E4ndischer Baht (THB)',
     MYR: 'Malaysischer Ringgit (MYR)',
     IDR: 'Indonesische Rupiah (IDR)',
     PHP: 'Philippinischer Peso (PHP)',
@@ -259,7 +259,7 @@ const unitLabels = {
     CLP: 'Chilenischer Peso (CLP)',
     COP: 'Kolumbianischer Peso (COP)',
     PEN: 'Peruanischer Sol (PEN)',
-    ZAR: 'SÃ¼dafrikanischer Rand (ZAR)',
+    ZAR: 'S\u00FCdafrikanischer Rand (ZAR)',
     NZD: 'Neuseeland-Dollar (NZD)'
   }
 };
