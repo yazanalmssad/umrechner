@@ -1,22 +1,24 @@
+﻿# Unit Converter / Umrechner
+
 Live:
 https://yazanalmssad.github.io/umrechner/
- 
- # Unit Converter / Umrechner
 
 Statischer Einheiten-Umrechner (HTML/CSS/JavaScript) mit deutschsprachiger Oberfläche.
 
 ## Funktionen
 - 10 Einheitenkategorien: Länge, Fläche, Gewicht, Zeit, Geschwindigkeit, Temperatur, Volumen, Energie, Druck, Leistung
-- Zusätzlich: Währungsumrechnung mit Live-Kursen (`open.er-api.com`)
 - Direkte Ergebnisanzeige inkl. Rechenweg bei physikalischen Kategorien
 - Pair-URLs pro Umrechnung (z. B. `/pages/length/m-zu-km/`)
+- Währung ist aktuell deaktiviert (nicht im Menü verlinkt, im Script deaktiviert)
 
 ## Projektstruktur
 - `index.html`: Startseite
-- `js/script.js`: Logik für Umrechnung, Routing, Währungsabruf
 - `css/styles.css`: Styles
+- `js/script.js`: Umrechnungslogik, Routing, Paarnavigation
 - `locales/de.json`: Texte/Übersetzungen
 - `pages/<kategorie>/...`: statische Kategorieseiten und Paarseiten
+- `robots.txt`: Crawling-Regeln + Sitemap-Verweis
+- `sitemap.xml`: Sitemap für Suchmaschinen (ohne Währungsseiten)
 
 ## Lokal starten
 Nutze einen lokalen statischen Server (nicht `file://`), damit `fetch()` zuverlässig funktioniert:
@@ -27,24 +29,32 @@ python -m http.server 8000
 
 Dann öffnen: `http://localhost:8000`
 
-Alternativ funktioniert auch z. B. `npx serve .`.
+Alternativ: `npx serve .`
 
 ## Bedienung
 1. Kategorie auswählen.
 2. Wert eingeben.
 3. Einheit bei „von“ und „nach“ wählen.
-4. Ergebnis wird berechnet (bei Währung per Button, um API-Anfragen zu begrenzen).
+4. Ergebnis wird sofort berechnet.
 
-Hinweis Währung:
-- Datenquelle: `https://open.er-api.com/v6/latest/<BASE>`
-- Kurse werden im Browser für 12 Stunden gecacht (`localStorage`).
-- Ohne Internetverbindung sind keine Live-Kurse verfügbar.
+## Deployment (GitHub Pages)
+Das Projekt läuft als GitHub Pages Project Site unter:
+`https://yazanalmssad.github.io/umrechner/`
 
-## Deployment
-Da es sich um eine statische Seite handelt, eignet sich das Projekt direkt für:
-- GitHub Pages
-- Netlify
-- Vercel (Static Site)
+Hinweis:
+- Pfad-Logik ist für lokal und GitHub Pages angepasst.
+- Nach JS-Änderungen ggf. Cache-Busting über die Script-Version in HTML erhöhen (z. B. `js/script.js?v=34`).
+
+## SEO
+Umgesetzt:
+- `meta description` auf allen Seiten (ohne Währung)
+- `canonical` auf allen Seiten (ohne Währung)
+- ein `h1` pro Seite (ohne Währung)
+- `robots.txt` + `sitemap.xml`
+
+Google Search Console:
+- Property: `https://yazanalmssad.github.io/umrechner/`
+- Sitemap einreichen als: `sitemap.xml`
 
 ## Lizenz
 Siehe `LICENSE`.
