@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="W in kW umrechnen (Leistung). Schnelle Online-Umrechnung mit verstaendlichem Rechenweg.">
 
-  <script id="dynamic-base">(function(){var b=document.createElement("base");b.href=(location.pathname.indexOf("/umrechner/")===0)?"/umrechner/":"/";document.head.appendChild(b);}());</script>
+  <base id="site-base" href="/">
+  <script id="dynamic-base">(function(){var b=document.getElementById("site-base");if(!b)return;b.href=(location.pathname.indexOf("/umrechner/")===0)?"/umrechner/":"/";}());</script>
   <title>Umrechner - Watt in Kilowatt</title>
   <link rel="canonical" href="https://yazanalmssad.github.io/umrechner/pages/power/W-zu-kW/">
   <link rel="stylesheet" href="css/styles.css?v=5">
